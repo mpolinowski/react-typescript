@@ -1,0 +1,19 @@
+{
+    "events": [
+        {
+          "uuid": "90080d52-f2ac-46e1-ad1e-ec7d6ab304a1",
+          "title": "#6534 Entrance Left",
+          "description": "2023-12-26 15:51:32: [Alarm]: Motion in area [1]"
+        },
+        {
+          "uuid": "c8ada1fe-318b-43a4-adc5-367d526cc5dd",
+          "title": "#6533 Lobby",
+          "description": "2023-12-26 15:50:38: [Event]: admin has logged in from 192.168.2.112"
+        },
+        {
+          "uuid": "762ad93a-4bcc-4f8d-97d1-93d4f1da1f35",
+          "title": "#6456 Elevator",
+          "description": "2023-12-26 15:44:19: [Event]: Switching to night mode"
+        }
+    ]
+}
