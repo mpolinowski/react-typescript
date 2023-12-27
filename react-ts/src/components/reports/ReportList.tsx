@@ -16,7 +16,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 
-import { ReportData } from './GetReports'
+import { ReportData } from './types'
 
 type Props = {
     reports: ReportData[];
@@ -24,7 +24,7 @@ type Props = {
 
 export function ReportList({ reports }: Props) {
     return (
-        <Card className="w-3/4">
+        <Card className="w-full mt-16">
             <CardHeader>
                 <CardTitle>Surveillance Log</CardTitle>
                 <CardDescription>Recorded camera events</CardDescription>
@@ -40,7 +40,7 @@ export function ReportList({ reports }: Props) {
                     </TableHeader>
                     <TableBody>
                         {reports.map((report) => (
-                        <TableRow key={report.uuid}>
+                        <TableRow key={report.id}>
                             <TableCell className="font-bold text-left">{report.title}</TableCell>
                             <TableCell className="text-left">{report.description}</TableCell>
                         </TableRow>

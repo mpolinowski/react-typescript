@@ -1,8 +1,4 @@
-export type ReportData = {
-    uuid: number;
-    title: string;
-    description: string;
-}
+import { ReportData } from './types'
 
 export async function getReports() {
     const response = await fetch(
@@ -26,11 +22,11 @@ export function assertIsReports(
         return
     }
     reportData.forEach((report) => {
-        if (!('uuid' in report)) {
-            throw new Error("ERROR :: Report doesn't contain an UUID");
+        if (!('id' in report)) {
+            throw new Error("ERROR :: Report doesn't contain an id");
         }
-        if (typeof report.uuid !== 'string') {
-            throw new Error('ERROR :: UUID is not a string');
+        if (typeof report.id !== 'string') {
+            throw new Error('ERROR :: id is not a string');
         }
         if (!('title' in report)) {
             throw new Error("ERROR :: Report doesn't contain title");
