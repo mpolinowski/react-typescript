@@ -224,7 +224,7 @@ export const cameras: Camera[] = [
     model: 'IN-9420 2K+',
     type: 'WQHD',
     region: 'Outdoor',
-    recordings: 21,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[0]
@@ -235,7 +235,7 @@ export const cameras: Camera[] = [
     model: 'IN-8403 2K+',
     type: 'WQHD',
     region: 'Indoor',
-    recordings: 3,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[1]
@@ -246,7 +246,7 @@ export const cameras: Camera[] = [
     model: 'IN-9408 2K+',
     type: 'WQHD',
     region: 'Outdoor',
-    recordings: 17,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[2]
@@ -257,7 +257,7 @@ export const cameras: Camera[] = [
     model: 'IN-9408 2K+',
     type: 'WQHD',
     region: 'Outdoor',
-    recordings: 2,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[3]
@@ -268,7 +268,7 @@ export const cameras: Camera[] = [
     model: 'IN-8415 2K+',
     type: 'WQHD',
     region: 'Indoor',
-    recordings: 22,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[4]
@@ -279,7 +279,7 @@ export const cameras: Camera[] = [
     model: 'IN-8403 2K+',
     type: 'WQHD',
     region: 'Indoor',
-    recordings: 345,
+    recordings: 6,
     ip: '192.168.2.125',
     httpport: 80,
     events: events[5]

@@ -12,13 +12,13 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 
-import { cameras } from '@/data/cameras';
+import { cameras } from '@/data/cameras'
 import { Vault } from '@/components/login/Vault'
+import { VideoWall } from '@/components/video_player/VideoWall'
 
 type Params = {
     id: string;
 };
-
 
 export function CameraPage() {
     const params = useParams<Params>();
@@ -37,28 +37,33 @@ export function CameraPage() {
                 </h1>
         ) : (
         <Vault>
-            <Card>
-                <CardHeader>
-                    <CardTitle>{ camera.name }</CardTitle>
-                    <CardDescription>
-                        <Badge variant="outline">{ camera.model }</Badge>
-                        <Badge variant="outline">{ camera.type }</Badge>
-                        <Badge variant="outline">{ camera.region }</Badge>
-                    </CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <p>Alarm Recordings: { camera.recordings }</p>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                    <Button variant="outline">Enhance</Button>
-                    <a href={ 'http://' + camera.ip + ':' + camera.httpport } target='_blank'>
-                        <Button variant="outline">WebUI</Button>
-                    </a>
-                    <Link to='/camera-list'>
-                        <Button>Return</Button>
-                    </Link>
-                </CardFooter>
-            </Card>
+            <>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{ camera.name }</CardTitle>
+                        <CardDescription>
+                            <div>
+                                <Badge variant="outline">{ camera.model }</Badge>
+                                <Badge variant="outline">{ camera.type }</Badge>
+                                <Badge variant="outline">{ camera.region }</Badge>
+                            </div>
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <p>Alarm Recordings: { camera.recordings }</p>
+                    </CardContent>
+                    <CardFooter className="flex justify-between">
+                        <Button variant="outline">Enhance</Button>
+                        <a href={ 'http://' + camera.ip + ':' + camera.httpport } target='_blank'>
+                            <Button variant="outline">WebUI</Button>
+                        </a>
+                        <Link to='/camera-list'>
+                            <Button>Return</Button>
+                        </Link>
+                    </CardFooter>
+                </Card>
+                <VideoWall camera= { camera.name } />
+            </>
         </Vault>
         )}
     </div>

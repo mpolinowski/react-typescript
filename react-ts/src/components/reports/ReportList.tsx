@@ -27,7 +27,7 @@ export function ReportList({ reports }: Props) {
         <Card className="w-full mt-16">
             <CardHeader>
                 <CardTitle>Surveillance Log</CardTitle>
-                <CardDescription>Recorded camera events</CardDescription>
+                <CardDescription>Recorded camera events using a JSON REST API</CardDescription>
             </CardHeader>
             <CardContent>
                 <Table>

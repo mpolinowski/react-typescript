@@ -8,6 +8,7 @@ import { ReportList } from '@/components/reports/ReportList'
 import { saveReport } from '@/components/reports/NewReport';
 import { NewReportForm } from '@/components/reports/NewReportForm';
 
+import { VideoWall } from '@/components/video_streamer/VideoWall'
 import { InputComponent } from '@/components/input_ref/RefHook_InputComponent'
 import { AlertNotify } from '@/components/alert/Alert'
 import { EffectHook } from '@/components/button_effect/EffectHook'
@@ -50,6 +51,7 @@ export function FrontPage() {
         <AlertNotify heading="Warning" type="warning" closable>
           New alarm events were recorded!
         </AlertNotify>
+        <VideoWall />
         <ReportList reports={reports} />
         <NewReportForm onSave={handleSave} />
         <InputComponent />

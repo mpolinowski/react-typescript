@@ -27,8 +27,8 @@ export function AlertNotify({ type = 'warning', heading, children, closable, onC
   }
   return (
     <Alert className={`
-      inline-flex flex-col text-left px-4 py-3 float-right
-      rounded-md border-1 border-transparent max-w-fit
+      inline-flex flex-col text-left px-4 py-3 mt-3 mr-3 top-0 right-0 float-right
+      absolute z-10 rounded-md border-1 border-transparent max-w-fit
       ${ type === 'warning' ? 'text-amber-900' : 'text-teal-900'}
       ${ type === 'warning' ? 'bg-amber-50' : 'bg-teal-50'}
     `} >
