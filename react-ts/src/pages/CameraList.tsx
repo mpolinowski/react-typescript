@@ -44,7 +44,12 @@ export function CameraList() {
                             <ScrollCards events={camera.events} />
                         </CardContent>
                         <CardFooter className="flex justify-between">
-                            <Button variant="outline">Control</Button>
+                            <Link
+                                to={`/camera/control/${camera.id}`}
+                                className="p-1 text-base hover:underline"
+                            >
+                                <Button variant="outline">Control</Button>
+                            </Link>
                             <a href={ 'http://' + camera.ip + ':' + camera.httpport } target='_blank'>
                                 <Button variant="outline">WebUI</Button>
                             </a>

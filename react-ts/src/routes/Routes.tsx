@@ -12,9 +12,10 @@ import { ErrorPage } from '@/pages/ErrorPage'
 
 import { Welcome } from '@/pages/Welcome'
 
-import { FrontPage } from '@/pages/Frontpage';
-import { CameraList } from '@/pages/CameraList';
-import { CameraPage } from '@/pages/CameraPage';
+import { FrontPage } from '@/pages/Frontpage'
+import { CameraList } from '@/pages/CameraList'
+import { CameraPage } from '@/pages/CameraPage'
+import { CameraUIPage } from '@/pages/CameraUIPage'
 import { UserPage } from '@/pages/UserPage';
 
 import { getReports } from '@/components/reports/GetReports'
@@ -42,6 +43,11 @@ const router = createBrowserRouter(
             {
                 path: 'camera/:id',
                 element: <CameraPage />,
+                loader: async () => defer({ reports: getReports() })
+            },
+            {
+                path: 'camera/control/:id',
+                element: <CameraUIPage />,
                 loader: async () => defer({ reports: getReports() })
             },
             {

@@ -30,7 +30,7 @@ export const RTSPStream: React.FC<VideoFeedProps> = ({ src }) => {
 
   return (
     <div>
-      <video className="video-js" ref={videoRef} controls>
+      <video className="video-js w-full h-96" ref={videoRef} controls>
         <source src={src} type="application/x-mpegURL" />
       </video>
     </div>
