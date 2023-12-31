@@ -10,22 +10,26 @@ import {
 } from "@/components/ui/card"
 
 import { VideoPlayer } from '@/components/video_player/VideoPlayer'
-import image from "@/assets/video_background.png"
-
-const videoJsOptions = {
-  autoplay: false,
-  controls: true,
-  responsive: true,
-  fluid: true,
-  sources: [
-    {
-      src: "//vjs.zencdn.net/v/oceans.mp4",
-      type: "video/mp4"
-    }
-  ]
-};
 
 export function VideoWall(id: {camera: string}) {
+
+  const videoJsOptions = {
+    autoplay: false,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [
+
+      {
+        src: "/alarm_recordings/A_2023-04-29_00-18-10.mp4",
+        type: "video/mp4"
+      },
+      {
+        src: "//vjs.zencdn.net/v/oceans.mp4",
+        type: "video/mp4"
+      }
+    ]
+  }
 
   const playerRef = useRef(null)
 
@@ -50,14 +54,24 @@ export function VideoWall(id: {camera: string}) {
       </CardHeader>
       <CardContent>
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-2">
-          <div><img src={image} alt="Video background" /></div>
-          <div><img src={image} alt="Video background" /></div>
-          <div><img src={image} alt="Video background" /></div>
+          <div>
+            <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
+          </div>
+          <div>
+            <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
+          </div>
+          <div>
+            <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
+          </div>
+          <div>
+            <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
+          </div>
           <div className="col-span-2 row-span-2">
             <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
           </div>
-          <div><img src={image} alt="Video background" /></div>
-          <div><img src={image} alt="Video background" /></div>
+          <div>
+            <VideoPlayer options={videoJsOptions} onReady={handlePlayerReady} />
+          </div>
         </div>
       </CardContent>
     </Card>

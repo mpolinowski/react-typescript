@@ -7,8 +7,8 @@ export function HLSPlayer( video: { url: string } ) {
     <>
       <ReactHlsPlayer
           src={video.url.href}
-          autoPlay={false}
-          controls={true}
+          autoPlay={true}
+          controls={false}
           width="100%"
           height="auto"
           hlsConfig={{
