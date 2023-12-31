@@ -3,8 +3,14 @@ import { lazy, Suspense } from 'react'
 import {
     createBrowserRouter,
     RouterProvider,
-    Navigate
-} from 'react-router-dom';
+    Navigate,
+    defer
+} from 'react-router-dom'
+
+import {
+    QueryClient,
+    QueryClientProvider,
+} from '@tanstack/react-query'
 
 import { App } from '@/App'
 import { ErrorPage } from '@/pages/ErrorPage'
@@ -16,7 +22,11 @@ import { CameraList } from '@/pages/CameraList';
 import { CameraPage } from '@/pages/CameraPage';
 import { UserPage } from '@/pages/UserPage';
 
+import { getReports } from '@/components/reports/GetReports'
+
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
     [{
@@ -39,6 +49,7 @@ const router = createBrowserRouter(
             {
                 path: 'camera/:id',
                 element: <CameraPage />,
+                loader: async () => defer({ reports: getReports() })
             },
             {
                 path: 'dashboard',
@@ -64,5 +75,9 @@ const router = createBrowserRouter(
     ]);
 
 export function Routes() {
-    return <RouterProvider router={router} />;
+    return (
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+        </QueryClientProvider>
+        )
 }
