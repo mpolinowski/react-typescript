@@ -1,5 +1,7 @@
 # React Typescript UI
 
+* [Step-by-Step Setup Guide](https://mpolinowski.github.io/docs/Development/Javascript/2023-12-14-reactjs-typescript-2023/2023-12-14)
+
 <!-- TOC -->
 
 - [React Typescript UI](#react-typescript-ui)
